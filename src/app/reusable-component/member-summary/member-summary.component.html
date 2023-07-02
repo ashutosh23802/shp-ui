@@ -1,0 +1,30 @@
+<div class="member-summary">
+    <h1 class="heading">Primary member detail</h1>
+    <form [formGroup]="memberSummaryForm">
+    <div class="row" >
+        <div class="col">
+            <label for="lastName" class="form-label">Family Name</label>
+            <input type="text" class="form-control" formControlName="lastName">
+        </div>
+        <div class="col">
+            <label for="phoneNumber" class="form-label">Phone Number</label>
+            <input type="text" class="form-control" formControlName="phoneNumber">
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col">
+            <label for="emailId" class="form-label">Email Id</label>
+            <input type="email" class="form-control" formControlName="emailId">
+        </div>
+        <div class="col">
+            <label for="area" class="form-label">Area</label>
+            <input type="text" class="form-control" formControlName="area">
+        </div>
+    </div>
+    <div class="row" style="padding-right: 10px;">
+    <button type="submit" class="btn btn-primary col-1 offset-11" 
+    (click)="addMember()">Add Member</button>
+    </div>
+</form>
+
+  </div>

@@ -1,0 +1,103 @@
+<h1 mat-dialog-title>{{data.title}} Member Details</h1>
+<div mat-dialog-content>
+    <div class="wrapper" *ngIf="apiMessage.length == 0">
+        <form [formGroup]="familyMemberForm">
+            <div class="row">
+                <div class="col">
+                    <label for="firstName" class="form-label">First Name</label>
+                    <input type="text" class="form-control" placeholder="Enter First Name" formControlName="firstName">
+                </div>
+                <div class="col">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" placeholder="Enter Last Name" formControlName="lastName">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="dateOfBirth" class="form-label">Date Of Birth</label>
+                    <input type="date" class="form-control" placeholder="Select Date" formControlName="dateOfBirth">
+                </div>
+                <div class="col">
+                    <label for="phoneNumber" class="form-label">Contact No</label>
+                    <input type="text" class="form-control" placeholder="Enter phone number" formControlName="phoneNumber">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="gender" class="form-label">Gender</label>
+                    <select name="gender" class="form-select" placeholder="Select gender" formControlName="gender">
+                        <option *ngFor="let gender of genderOptions" [ngValue]="gender">{{gender}}</option>
+                      </select>
+                </div>
+                <div class="col">
+                    <label for="email" class="form-label">Email Id</label>
+                    <input type="email" class="form-control" placeholder="Enter email id" formControlName="emailId">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="education" class="form-label">Education Field</label>
+                    <input type="text" class="form-control" placeholder="Enter field of education" formControlName="education">
+                </div>
+
+                <div class="col">
+                    <label for="educationLevel" class="form-label">Highest Education</label>
+                    <select name="educationLevel" class="form-select" formControlName="educationLevel">
+                        <option *ngFor="let educationLevel of educationLevelOptions" [ngValue]="educationLevel">{{educationLevel.name}}</option>
+                      </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="occupation" class="form-label">Occupation</label>
+                    <input type="text" class="form-control" placeholder="Enter Occupation" formControlName="occupation">
+                </div>
+                <div class="col">
+                    <label for="jobCategory" class="form-label">Job Category</label>
+                    <select name="education" class="form-select" formControlName="jobCategory">
+                        <option *ngFor="let jobCategory of jobCategoryOptions" [ngValue]="jobCategory">{{jobCategory.name}}</option>
+                      </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="roleAsMember" class="form-label">Role as Member</label>
+                    <select name="roleAsMember" class="form-select" formControlName="roleAsMember">
+                        <option *ngFor="let role of memberRoleOptions" [ngValue]="role">{{role.name}}</option>
+                      </select>
+                </div>
+                <div class="col">
+                    <label for="roleInFamily" class="form-label">Role in family</label>
+                    <select name="roleInFamily" class="form-select" formControlName="roleInFamily">
+                        <option *ngFor="let role of familyRoleOptions" [ngValue]="role">{{role.name}}</option>
+                      </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="maritalStatus" class="form-label">Marital Status</label>
+                    <select name="maritalStatus" class="form-select" formControlName="maritalStatus">
+                        <option *ngFor="let status of maritalStatusOptions" [ngValue]="status">{{status.name}}</option>
+                      </select>
+                </div>
+                <div class="col">
+                    <label for="remarks" class="form-label">Remarks</label>
+                    <input type="text" class="form-control" placeholder="Enter Remarks" formControlName="remarks">
+                </div>
+            </div>
+    
+        </form>
+    </div>
+    <div *ngIf="apiMessage.length > 0" class="apiMessage">
+        <h6>
+            {{apiMessage}}
+        </h6>
+    </div>
+</div>
+<div mat-dialog-actions class="float-end" *ngIf="apiMessage.length == 0">
+  <button mat-button  class="btn btn-primary" style="margin-right: 20px;" 
+  cdkFocusInitial  (click)="addUpdateMember()">{{data.title}} Member</button>
+  <button mat-button class="btn btn-primary" (click)="cancel()">Cancel</button>
+</div>
+
+

@@ -1,0 +1,61 @@
+:host{
+    height: 100%;
+}
+
+label{
+    font-weight: bold;
+    font-size: large;
+} 
+
+.search-form{
+    height: 20%;
+    margin-bottom: 30px;;
+}
+
+.search-table{
+  height: 550px;
+  overflow: scroll;
+    mat-table{
+        width: 100%;
+        margin: auto;
+        mat-header-cell{
+          font-size: initial;
+          color: white;
+        }
+    }
+    mat-header-cell, mat-cell {
+      justify-content: center;
+  }
+
+  .mat-column-sno {
+    width: 4%;
+  }
+  .mat-column-zone {
+    width: 8%;
+  }
+  .mat-column-leader {
+    width: 15%;
+  }
+  .mat-column-head {
+    width: 15%;
+  }
+  .mat-column-spouse {
+    width: 15%;
+  }
+  .mat-column-contact {
+    width: 8%;
+  }
+  .mat-column-children {
+    width: 5%;
+  }
+  .mat-column-education {
+    width: 5%;
+  }
+  .mat-column-address {
+    width: 12%;
+  }
+  .mat-column-actions {
+    width: 2%;
+  }
+}
+

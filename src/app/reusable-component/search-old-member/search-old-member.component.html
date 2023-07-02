@@ -1,0 +1,112 @@
+<div>
+    <div class="col align-items-baseline row search-form">
+        <label for="familyName" class="col-2 label">Enter Family Name</label>
+        <div class="input col-7">
+            <input type="text" class="form-control" id="familyName"
+            [formControl]="searchString" placeholder="Eg: Raymonds/Dias/Salve">
+        </div>
+    </div>
+
+    <div class="search-table">
+      <mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="sno">
+          <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.sno}} </mat-cell>
+        </ng-container>
+      
+        <ng-container matColumnDef="zone">
+          <mat-header-cell *matHeaderCellDef> Zone </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.zone}} </mat-cell>
+        </ng-container>
+      
+        <ng-container matColumnDef="leader">
+          <mat-header-cell *matHeaderCellDef> Area Leader </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.leader}} </mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="head">
+          <mat-header-cell *matHeaderCellDef> Family Head </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.head}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="spouse">
+            <mat-header-cell *matHeaderCellDef> Spouse </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.spouse}} </mat-cell>
+          </ng-container>
+        
+          <ng-container matColumnDef="contact">
+            <mat-header-cell *matHeaderCellDef> Contact </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.contact}} </mat-cell>
+          </ng-container>
+        
+          <ng-container matColumnDef="children">
+            <mat-header-cell *matHeaderCellDef> Children </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.children}} </mat-cell>
+          </ng-container>
+      
+          <ng-container matColumnDef="education">
+            <mat-header-cell *matHeaderCellDef> Education </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.education}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="address">
+            <mat-header-cell *matHeaderCellDef> Address </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.address}} </mat-cell>
+          </ng-container>
+    
+        <ng-container matColumnDef="actions">
+          <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+              <img src="../../../assets/Add new.svg" title="Add" (click)="openAddFamilyHead(element)">               
+          </mat-cell>
+      </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row >
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table >
+
+    </div>
+
+    <!-- <form [formGroup]="oldMemberDataForm">
+        <div class="row">
+            <div class="col">
+                <label for="zone" class="form-label">Zone Name</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="col">
+                <label for="leader" class="form-label">Area Leader</label>
+                <input type="text" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="head" class="form-label">Head of the family</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="col">
+                <label for="spouse" class="form-label">Spouse</label>
+                <input type="text" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="contact" class="form-label">Contact No</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="col">
+                <label for="children" class="form-label">Children</label>
+                <input type="text" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="education" class="form-label">Education</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="col">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" class="form-control">
+            </div>
+        </div>
+    </form> -->
+
+</div>
