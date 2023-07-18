@@ -1,0 +1,25 @@
+.search-form {
+  height: 20%;
+  margin-bottom: 50px;
+
+  label {
+    font-weight: bold;
+  }
+}
+
+.search-table {
+  height: 550px;
+  overflow: scroll;
+  mat-table {
+    width: 100%;
+    margin: auto;
+    mat-header-cell {
+      font-size: initial;
+      color: white;
+    }
+  }
+  mat-header-cell,
+  mat-cell {
+    justify-content: center;
+  }
+}

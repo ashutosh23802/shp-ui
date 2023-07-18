@@ -1,0 +1,90 @@
+<h1 *ngIf="!memberDetails">Please select a member on the left</h1>
+
+<form [formGroup]="memberDetail" *ngIf="memberDetail">
+  <div class="row">
+    <div class="col">
+      <label for="firstName" class="form-label">First Name</label>
+      <input type="text" class="form-control" formControlName="firstName" />
+    </div>
+    <div class="col">
+      <label for="lastName" class="form-label">Last Name</label>
+      <input type="text" class="form-control" formControlName="lastName" />
+    </div>
+    <div class="col">
+      <label for="dateOfBirth" class="form-label">Date Of Birth</label>
+      <input type="date" class="form-control" formControlName="dateOfBirth" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="phoneNumber" class="form-label">Contact No</label>
+      <input type="text" class="form-control" formControlName="phoneNumber" />
+    </div>
+    <div class="col">
+      <label for="gender" class="form-label">Gender</label>
+      <input type="text" class="form-control" formControlName="gender" />
+    </div>
+    <div class="col">
+      <label for="email" class="form-label">Email Id</label>
+      <input
+        type="email"
+        class="form-control"
+        placeholder="Enter email id"
+        formControlName="emailId"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="education" class="form-label">Education Field</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter field of education"
+        formControlName="education"
+      />
+    </div>
+
+    <div class="col">
+      <label for="educationLevel" class="form-label">Highest Education</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="educationLevel"
+      />
+    </div>
+    <div class="col">
+      <label for="occupation" class="form-label">Occupation</label>
+      <input type="text" class="form-control" formControlName="occupation" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="jobCategory" class="form-label">Job Category</label>
+      <input type="text" class="form-control" formControlName="jobCategory" />
+    </div>
+    <div class="col">
+      <label for="maritalStatus" class="form-label">Marital Status</label>
+      <input type="text" class="form-control" formControlName="maritalStatus" />
+    </div>
+    <div class="col">
+      <label for="remarks" class="form-label">Remarks</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter Remarks"
+        formControlName="remarks"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="roleAsMember" class="form-label">Role as Member</label>
+      <input type="text" class="form-control" formControlName="roleAsMember" />
+    </div>
+    <div class="col">
+      <label for="roleInFamily" class="form-label">Role in family</label>
+      <input type="text" class="form-control" formControlName="roleInFamily" />
+    </div>
+  </div>
+</form>

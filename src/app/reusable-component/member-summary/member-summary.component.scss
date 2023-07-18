@@ -1,15 +1,14 @@
-.member-summary{
+.member-summary {
+  label {
+    font-weight: bold;
+  }
 
-    label{
-        font-weight: bold;
-    }
+  // div{
+  //     margin-bottom: 20px;
+  // }
 
-    div{
-        margin-bottom: 20px;
-    }
-
-    .heading{
-    color: #4C516D;
-    border-bottom: 10px solid #4C516D;
-    }
+  .heading {
+    color: #4c516d;
+    border-bottom: 10px solid #4c516d;
+  }
 }

@@ -1,0 +1,24 @@
+<form [formGroup]="familyDetailForm" *ngIf="familyDetailForm">
+  <div class="d-flex flex-column">
+    <div class="mb-4">
+      <label for="familyName" class="form-label">Family Name</label>
+      <input type="text" class="form-control" formControlName="familyName" />
+    </div>
+    <div class="mb-4">
+      <label for="phoneNumber" class="form-label">Contact</label>
+      <input type="text" class="form-control" formControlName="phoneNumber" />
+    </div>
+    <div class="mb-4">
+      <label for="email" class="form-label">Email</label>
+      <input type="text" class="form-control" formControlName="emailId" />
+    </div>
+    <div class="mb-4">
+      <label for="activeStatus" class="form-label">Is Active</label>
+      <input type="text" class="form-control" formControlName="isActive" />
+    </div>
+  </div>
+</form>
+
+<button style="width: auto" class="btn btn-dark" (click)="addMemberToFamily()">
+  Add Member
+</button>

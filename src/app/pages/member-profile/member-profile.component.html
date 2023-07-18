@@ -1,0 +1,27 @@
+<div class="d-flex p-2 w-100 row">
+  <div class="p-2 border-3 border-dark side-bar col-2 bg-dark">
+    <app-family-side-bar
+      [family-membership-id]="memberId"
+    ></app-family-side-bar>
+  </div>
+  <div
+    class="p-3 border border-3 border-left-0 border-dark d-flex flex-column col-10 profile-detail"
+  >
+    <app-member-summary
+      [title]="'Registration Details'"
+      [family-membership-id]="memberId"
+      class="border-bottom-3 border-dark mb-2 p-2"
+    ></app-member-summary>
+    <div class="row">
+      <app-family-member-table
+        (member-selected)="onMemberSelected($event)"
+        [family-membership-id]="memberId"
+        class="col-2"
+      ></app-family-member-table>
+      <app-member-complete-details
+        [complete-member-detail]="selectedMemberData"
+        class="p-2 border border-dark col-10"
+      ></app-member-complete-details>
+    </div>
+  </div>
+</div>

@@ -9,7 +9,8 @@ export class NewDirectoryService {
   private fetchFamilyMembersUrl =
     'http://localhost:8082/family?familyMembershipId=';
   private registerUserUrl = 'http://localhost:8082/registration';
-  private addMemberUrl = 'http://localhost:8082/member';
+  private registerDetailrUrl = 'http://localhost:8082/registrationDetail/';
+  private memberUrl = 'http://localhost:8082/member';
   private familyRolesListUrl = 'http://localhost:8082/familyRoles';
   private memberRolesListUrl = 'http://localhost:8082/memberRoles';
   private maritalStatusListUrl = 'http://localhost:8082/maritalStatus';
@@ -28,14 +29,41 @@ export class NewDirectoryService {
     });
   }
 
-  fetchFamilyMembers(id: number) {
+  fetchFamilyMembership(searchString: String) {
+    return this.http.get(
+      this.registerUserUrl + '?searchString=' + searchString,
+      {
+        observe: 'response',
+      }
+    );
+  }
+
+  fetchFamilyMembershipById(membershipId: String) {
+    return this.http.get(this.registerUserUrl + '/' + membershipId, {
+      observe: 'response',
+    });
+  }
+
+  fetchFamilyMembers(id: String) {
     return this.http.get(this.fetchFamilyMembersUrl + id, {
       observe: 'response',
     });
   }
 
+  fetchRolesAsFamilyMember(membershipId: String) {
+    return this.http.get(this.familyRolesListUrl + '/' + membershipId, {
+      observe: 'response',
+    });
+  }
+
+  fetchRolesAsMember(membershipId: String) {
+    return this.http.get(this.memberRolesListUrl + '/' + +membershipId, {
+      observe: 'response',
+    });
+  }
+
   addNewMember(formData: any) {
-    return this.http.post(this.addMemberUrl, formData, { observe: 'response' });
+    return this.http.post(this.memberUrl, formData, { observe: 'response' });
   }
 
   getFamilyRoleList() {
@@ -56,5 +84,17 @@ export class NewDirectoryService {
 
   getJobCategoryList() {
     return this.http.get(this.jobCategoryListUrl, { observe: 'response' });
+  }
+
+  fetchRegistrationDetail(memberId: String) {
+    return this.http.get(this.registerDetailrUrl + memberId, {
+      observe: 'response',
+    });
+  }
+
+  fetchBasicMemberDetail(memberId: String) {
+    return this.http.get(this.memberUrl + memberId, {
+      observe: 'response',
+    });
   }
 }

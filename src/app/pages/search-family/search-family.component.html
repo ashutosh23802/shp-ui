@@ -1,0 +1,75 @@
+<div>
+  <form class="row" class="search-form">
+    <div class="col align-items-baseline row">
+      <label for="name" class="col-2 label">Enter Family Name</label>
+      <div class="input col-7">
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          [formControl]="searchString"
+          placeholder="Eg: Raymonds/Dias/Salve"
+        />
+      </div>
+      <button
+        class="col-3"
+        style="width: auto"
+        type="submit"
+        class="btn btn-dark btn-outline-success"
+      >
+        Search
+      </button>
+    </div>
+  </form>
+
+  <div class="search-table">
+    <mat-table [dataSource]="dataSource">
+      <ng-container matColumnDef="sno">
+        <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.id }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="familyName">
+        <mat-header-cell *matHeaderCellDef> Family Name </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          {{ element.familyName }}
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="contact">
+        <mat-header-cell *matHeaderCellDef> Contact</mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          {{ element.phoneNumber }}
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef> Email</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.email }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="isActive">
+        <mat-header-cell *matHeaderCellDef> Active </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.active }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="remarks">
+        <mat-header-cell *matHeaderCellDef> Remarks </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.remarks }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <img
+            src="../../../assets/view.svg"
+            title="Open Profile"
+            [routerLink]="['/member-profile', element.id]"
+          />
+        </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+  </div>
+</div>
